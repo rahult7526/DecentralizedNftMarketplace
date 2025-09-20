@@ -149,9 +149,7 @@ pnpm --filter contracts node
 pnpm deploy:contracts
 ```
 
-### 2. Access the Application
-- **Frontend**: http://localhost:3000
-- **Hardhat Network**: http://localhost:8545
+### 2. Access the Application via localhost
 
 ### 3. Deploy to Sepolia
 ```bash
