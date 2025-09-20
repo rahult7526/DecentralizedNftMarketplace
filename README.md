@@ -1,4 +1,4 @@
-# DeNft Marketplace - Monorepo
+# DeNft Marketplace - Monorepo (Under_Development)
 
 A decentralized NFT marketplace for in-game assets and digital art, built with Next.js 14 and Hardhat.
 
