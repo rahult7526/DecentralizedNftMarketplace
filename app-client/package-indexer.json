@@ -1,0 +1,24 @@
+{
+  "name": "nft-marketplace-indexer",
+  "version": "1.0.0",
+  "scripts": {
+    "indexer:start": "node scripts/service.js start",
+    "indexer:stop": "node scripts/service.js stop", 
+    "indexer:restart": "node scripts/service.js restart",
+    "indexer:status": "node scripts/service.js status",
+    "indexer:dev": "npx tsx scripts/indexer.ts",
+    "indexer:build": "npx tsc scripts/indexer.ts --outDir dist/",
+    "db:migrate": "echo 'Run the SQL commands from INDEXER_SETUP.md in your Supabase dashboard'",
+    "db:seed": "echo 'No seed data needed - the indexer will populate from blockchain events'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "ethers": "^6.8.0",
+    "swr": "^2.2.4"
+  },
+  "devDependencies": {
+    "tsx": "^4.6.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

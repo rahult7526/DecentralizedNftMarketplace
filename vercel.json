@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "name": "denft-marketplace",
+  "builds": [
+    {
+      "src": "app-client/package.json",
+      "use": "@vercel/next",
+      "config": {
+        "outputDirectory": "app-client"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app-client/$1"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_CHAIN_ID": "@next_public_chain_id",
+    "NEXT_PUBLIC_NFT_CONTRACT_ADDRESS": "@next_public_nft_contract_address",
+    "NEXT_PUBLIC_MARKETPLACE_CONTRACT_ADDRESS": "@next_public_marketplace_contract_address",
+    "NEXT_PUBLIC_ALCHEMY_API_KEY": "@next_public_alchemy_api_key",
+    "NEXT_PUBLIC_PINATA_API_KEY": "@next_public_pinata_api_key",
+    "NEXT_PUBLIC_PINATA_SECRET_API_KEY": "@next_public_pinata_secret_api_key",
+    "NEXT_PUBLIC_PINATA_GATEWAY": "@next_public_pinata_gateway",
+    "NEXT_PUBLIC_NETWORK_NAME": "@next_public_network_name",
+    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_CHAIN_ID": "@next_public_chain_id",
+      "NEXT_PUBLIC_NFT_CONTRACT_ADDRESS": "@next_public_nft_contract_address",
+      "NEXT_PUBLIC_MARKETPLACE_CONTRACT_ADDRESS": "@next_public_marketplace_contract_address",
+      "NEXT_PUBLIC_ALCHEMY_API_KEY": "@next_public_alchemy_api_key",
+      "NEXT_PUBLIC_PINATA_API_KEY": "@next_public_pinata_api_key",
+      "NEXT_PUBLIC_PINATA_SECRET_API_KEY": "@next_public_pinata_secret_api_key",
+      "NEXT_PUBLIC_PINATA_GATEWAY": "@next_public_pinata_gateway",
+      "NEXT_PUBLIC_NETWORK_NAME": "@next_public_network_name",
+      "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key",
+      "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key"
+    }
+  },
+  "functions": {
+    "app-client/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "regions": ["iad1"],
+  "framework": "nextjs"
+}

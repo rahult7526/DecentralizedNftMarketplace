@@ -1,0 +1,54 @@
+{
+  "name": "denft-marketplace",
+  "version": "1.0.0",
+  "description": "Decentralized NFT Marketplace - Monorepo",
+  "private": true,
+  "workspaces": [
+    "app-client",
+    "contracts"
+  ],
+  "scripts": {
+    "install:all": "pnpm install && pnpm --filter app-client install && pnpm --filter contracts install",
+    "dev:client": "pnpm --filter app-client dev",
+    "build:client": "pnpm --filter app-client build",
+    "start:client": "pnpm --filter app-client start",
+    "lint:client": "pnpm --filter app-client lint",
+    "type-check:client": "pnpm --filter app-client type-check",
+    "compile:contracts": "pnpm --filter contracts compile",
+    "test:contracts": "pnpm --filter contracts test",
+    "test:e2e": "pnpm --filter app-client test:e2e",
+    "test:all": "pnpm test:contracts && pnpm test:e2e",
+    "test:runner": "node test-runner.js",
+    "test:security": "pnpm --filter contracts test test/SecurityTests.test.ts",
+    "audit:slither": "cd contracts && slither . --solc-version 0.8.19",
+    "audit:mythx": "mythx analyze contracts/contracts/*.sol",
+    "test:marketplace": "pnpm --filter contracts test:marketplace",
+    "deploy:contracts": "pnpm --filter contracts deploy",
+    "deploy:marketplace": "pnpm --filter contracts deploy:marketplace",
+    "deploy:contracts:sepolia": "pnpm --filter contracts deploy:sepolia",
+    "deploy:marketplace:sepolia": "pnpm --filter contracts deploy:marketplace:sepolia",
+    "vercel:deploy": "pnpm --filter app-client vercel:deploy",
+    "vercel:preview": "pnpm --filter app-client vercel:preview",
+    "indexer:start": "pnpm --filter app-client indexer:start",
+    "indexer:stop": "pnpm --filter app-client indexer:stop",
+    "indexer:dev": "pnpm --filter app-client indexer:dev",
+    "setup:env": "node scripts/setup-env.js",
+    "deploy:marketplace:sepolia": "pnpm --filter contracts deploy:marketplace:sepolia",
+    "verify:contracts": "pnpm --filter contracts verify",
+    "clean:all": "pnpm --filter app-client clean && pnpm --filter contracts clean",
+    "dev": "concurrently \"pnpm dev:client\" \"pnpm --filter contracts node\"",
+    "test": "pnpm test:contracts",
+    "build": "pnpm build:client && pnpm compile:contracts",
+    "lint": "pnpm lint:client",
+    "type-check": "pnpm type-check:client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0"
+}
