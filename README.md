@@ -237,15 +237,10 @@ rm -rf app-client/.next
 pnpm dev:client
 ```
 
-### Port Conflicts
-- Next.js runs on port 3000
-- Hardhat node runs on port 8545
-- Make sure these ports are available
-
 ## 📄 License
 
 MIT License - see LICENSE file for details.
 
 ---
 
-**Ready to build!** 🚀 Start with `pnpm install:all` and `pnpm dev` to begin development.
+**Ready to build!** 🚀 Start with `pnpm install:all` and `pnpm dev` to begin development soon.
